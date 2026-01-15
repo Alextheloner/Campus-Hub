@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@config "./tailwind.config.js";
+
+@layer base {
+  .palette {
+    @apply text-slate-600 dark:text-slate-400 ;
+  }
+}

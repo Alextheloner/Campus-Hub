@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusHub - Your All-in-One Campus Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/output.css" />
+    <style type="text/tailwindcss">
+      @layer base {
+        html {
+          font-family: "Lexend", sans-serif;
+        }
+      }
+    </style>
+    
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div
+      class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="flex flex-1 justify-center">
+          <div
+            class="layout-content-container flex flex-col w-full max-w-5xl flex-1 px-4 sm:px-6 md:px-8"
+          >
+            <!-- TopNavBar -->
+            <header
+              class="flex items-center justify-between whitespace-nowrap border-b border-black/10 dark:border-white/10 py-4"
+            >
+              <div
+                class="flex items-center gap-4 text-slate-900 dark:text-white"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >school</span
+                >
+                <h2
+                  class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+                >
+                  CampusHub
+                </h2>
+              </div>
+              <nav class="hidden md:flex flex-1 justify-center gap-8">
+                <a
+                  class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal  hover:text-primary "
+                  href="/html/index.html"
+                  >Home</a
+                >
+                
+                <a
+                  class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal  hover:text-primary "
+                  href="/html/About.html"
+                  >About Us</a
+                >
+                <a
+                  class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary "
+                  href="/html/contact.html"
+                  >Contact</a
+                >
+              </nav>
+              <div class="flex items-center gap-2">
+                <button
+                  id="loginBtn"
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-slate-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90"
+                >
+                  <span class="truncate">Login</span>
+                </button>
+                <!-- darkmode -->
+                <button id="theme-toggle" type="button" class="theme-btn">
+                  <span
+                    id="theme-toggle-light-icon"
+                    class="material-symbols-outlined hidden text-primary"
+                    >light_mode</span
+                  >
+                  <span
+                    id="theme-toggle-dark-icon"
+                    class="material-symbols-outlined hidden text-primary"
+                    >dark_mode</span
+                  >
+                </button>
+                <!-- mobile menu button -->
+                <button
+                  id="menu-toggle"
+                  class="flex md:hidden max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-black/5 dark:bg-white/10 text-slate-900 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+                >
+                  <span class="material-symbols-outlined">menu</span>
+                </button>
+              </div>
+            </header>
+
+            <!-- Hero Section -->
+            <main class="py-16 sm:py-20 lg:py-24">
+              <div class="@container">
+                <div
+                  class="flex flex-col-reverse gap-10 @[864px]:flex-row @[864px]:items-center"
+                >
+                  <div
+                    class="flex flex-col gap-6 text-center @[864px]:text-left @[864px]:justify-center @[864px]:flex-1"
+                  >
+                    <div class="flex flex-col gap-4">
+                      <h1
+                        class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                      >
+                        Your All-in-One Campus Companion
+                      </h1>
+                      <p
+                        class="text-slate-700 dark:text-slate-300 text-base font-normal leading-normal @[480px]:text-lg"
+                      >
+                        Access study materials, track events, and connect with
+                        your peers—all in one place.
+                      </p>
+                    </div>
+                    <div
+                      class="flex-wrap gap-3 flex justify-center @[864px]:justify-start"
+                    >
+                      <button
+                        id="signupBtn"
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-slate-900 text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90"
+                      >
+                        <span class="truncate">Get Started</span>
+                      </button>
+                      <button
+                        id="loginBtn"
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-black/5 dark:bg-white/10 text-slate-900 dark:text-white text-base font-bold leading-normal tracking-[0.015em]"
+                      >
+                        <span class="truncate">Login</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-1 w-full bg-center bg-no-repeat aspect-square bg-contain rounded-lg"
+                    data-alt="A friendly, modern illustration depicting student life and collaboration."
+                    style="background-image: url('/Images/Image_fx.jpg')"
+                  ></div>
+                </div>
+              </div>
+            </main>
+
+            <!-- Features Section -->
+            <section class="py-16 sm:py-20 lg:py-24">
+              <div class="flex flex-col gap-10 @container">
+                <div class="flex flex-col gap-4 text-center">
+                  <h2
+                    class="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]"
+                  >
+                    Everything You Need to Succeed
+                  </h2>
+                  <p
+                    class="text-slate-700 dark:text-slate-300 text-base font-normal leading-normal max-w-2xl mx-auto"
+                  >
+                    Explore the tools designed to enhance your university
+                    experience, from academic resources to social connections.
+                  </p>
+                </div>
+                <div
+                  class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-0"
+                >
+                  <!-- Each feature card grouped below -->
+                  <div
+                    class="flex flex-1 gap-4 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-background-dark p-6 flex-col"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-3xl"
+                      >book</span
+                    >
+                    <div class="flex flex-col gap-1">
+                      <h3
+                        class="text-slate-900 dark:text-white text-base font-bold leading-tight"
+                      >
+                        Study Materials
+                      </h3>
+                      <p
+                        class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal"
+                      >
+                        Access shared notes, past papers, and study guides from
+                        your courses.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-1 gap-4 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-background-dark p-6 flex-col"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-3xl"
+                      >event</span
+                    >
+                    <div class="flex flex-col gap-1">
+                      <h3
+                        class="text-slate-900 dark:text-white text-base font-bold leading-tight"
+                      >
+                        Events &amp; Announcements
+                      </h3>
+                      <p
+                        class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal"
+                      >
+                        Stay updated with the latest campus happenings and
+                        important notices.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-1 gap-4 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-background-dark p-6 flex-col"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-3xl"
+                      >edit_calendar</span
+                    >
+                    <div class="flex flex-col gap-1">
+                      <h3
+                        class="text-slate-900 dark:text-white text-base font-bold leading-tight"
+                      >
+                        Digital Timetable Builder
+                      </h3>
+                      <p
+                        class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal"
+                      >
+                        Create and manage your weekly schedule with ease.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Testimonial Section -->
+            <section class="py-16 sm:py-20 lg:py-24">
+              <div class="flex flex-col items-center gap-10">
+                <h4
+                  class="text-slate-600 dark:text-slate-400 text-sm font-bold leading-normal tracking-[0.015em] text-center"
+                >
+                  What Students Are Saying
+                </h4>
+                <div
+                  class="bg-primary/20 dark:bg-primary/10 rounded-xl p-8 lg:p-12 w-full max-w-3xl text-center"
+                >
+                  <blockquote
+                    class="text-xl lg:text-2xl font-medium text-slate-900 dark:text-white"
+                  >
+                    "CampusHub has been a lifesaver. I found materials that
+                    helped alot here and managed to keep track of all my classes
+                    and events in one place. It certainly has been big help!"
+                  </blockquote>
+                  <footer class="mt-6">
+                    <div
+                      class="text-base font-bold text-slate-900 dark:text-white"
+                    >
+                      Sarah Ugwuoke
+                    </div>
+                    <div class="text-sm text-slate-700 dark:text-slate-300">
+                      Computer Science, 3rd Year
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-16 sm:py-20 lg:py-24">
+              <div
+                class="bg-white dark:bg-background-dark border border-black/10 dark:border-white/10 rounded-xl p-8 lg:p-12"
+              >
+                <div class="flex flex-col lg:flex-row lg:items-center gap-8">
+                  <div class="flex-1">
+                    <h2
+                      class="text-slate-900 dark:text-white text-2xl lg:text-3xl font-bold leading-tight tracking-[-0.015em]"
+                    >
+                      Ready to Simplify Your Student Life?
+                    </h2>
+                    <p class="text-slate-700 dark:text-slate-300 mt-2">
+                      Join lots of students and get organized today. Enter your
+                      email to get started.
+                    </p>
+                  </div>
+                  <form
+                    class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto"
+                  >
+                    <input
+                      class="grow rounded-lg h-12 px-4 bg-background-light dark:bg-white/10 border-black/10 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-500"
+                      placeholder="Enter your email"
+                      type="email"
+                    />
+                    <button
+                      id="signupBtn"
+                      class="flex min-w-[140px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-slate-900 text-base font-bold leading-normal tracking-[0.015em]"
+                    >
+                      <span class="truncate">Sign Up Now</span>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </section>
+
+            <!-- Footer -->
+            <footer
+              class="py-10 border-t border-black/10 dark:border-white/10 mt-16"
+            >
+              <div
+                class="flex flex-col md:flex-row justify-between items-center gap-8"
+              >
+                <div class="text-center md:text-left">
+                  <p class="text-sm text-slate-700 dark:text-slate-300">
+                    © 2025 CampusHub. All rights reserved.
+                  </p>
+                  <a
+                    class="text-sm text-slate-600 dark:text-slate-400 "
+                    href="About.html"
+                    >About Us</a
+                  >
+                  ·
+                  <a
+                    class="text-sm text-slate-600 dark:text-slate-400 "
+                    href="contact.html"
+                    >Contact</a
+                  >
+                </div>
+                <div class="flex items-center gap-4">
+                  <a
+                    class="text-slate-600 dark:text-slate-400 "
+                    href="#"
+                  >
+                    <!-- Facebook SVG -->
+                    <svg
+                      fill="none"
+                      height="24"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <a
+                    class="text-slate-600 dark:text-slate-400 hover:text-primary"
+                    href="#"
+                  >
+                    <!-- Twitter SVG -->
+                    <svg
+                      fill="none"
+                      height="24"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <a
+                    class="text-slate-600 dark:text-slate-400 hover:text-primary"
+                    href="#"
+                  >
+                    <!-- Instagram SVG -->
+                    <svg
+                      fill="none"
+                      height="24"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        height="20"
+                        rx="5"
+                        ry="5"
+                        width="20"
+                        x="2"
+                        y="2"
+                      ></rect>
+                      <path
+                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                      ></path>
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/js/script.js"></script>
+</html>

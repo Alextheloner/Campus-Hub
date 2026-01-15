@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CampusHub Events</title>
+    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script> -->
+    <link rel="stylesheet" href="/css/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <!-- <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#39E079",
+            "background-light": "#f6f8f7",
+            "background-dark": "#122017"
+          },
+          fontFamily: { display: "Lexend" },
+          borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }
+        }
+      }
+    }
+  </script> -->
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="font-display bg-background-light dark:bg-background-dark">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root"
+    >
+      <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside
+          class="sticky top-0 h-screen w-64 shrink-0 flex-col justify-between border-r border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark p-4 hidden md:flex"
+        >
+          <div class="flex flex-col gap-8">
+            <!-- Logo/Title -->
+            <div class="flex items-center gap-3 px-3">
+              <div class="size-6 text-primary">
+                <svg
+                  fill="none"
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+              <h2
+                class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
+              >
+                CampusHub
+              </h2>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="flex flex-col gap-2">
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                href="/html/dashboard.html"
+              >
+                <span
+                  class="material-symbols-outlined text-gray-600 dark:text-gray-400"
+                  >dashboard</span
+                >
+                <p
+                  class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-200"
+                >
+                  Dashboard
+                </p>
+              </a>
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                href="/html/announcements.html"
+              >
+                <span
+                  class="material-symbols-outlined text-gray-600 dark:text-gray-400"
+                  >campaign</span
+                >
+                <p
+                  class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-200"
+                >
+                  Announcements
+                </p>
+              </a>
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                href="/html/resources.html"
+              >
+                <span
+                  class="material-symbols-outlined text-gray-600 dark:text-gray-400"
+                  >local_library</span
+                >
+                <p
+                  class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-200"
+                >
+                  Resources
+                </p>
+              </a>
+              <a
+                class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary dark:bg-primary/30"
+                href="/html/events.html"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >event</span
+                >
+                <p class="text-sm font-medium leading-normal text-primary">
+                  Events
+                </p>
+              </a>
+
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                href="/html/timetable.html"
+              >
+                <span
+                  class="material-symbols-outlined text-gray-600 dark:text-gray-400"
+                  >edit_calendar</span
+                >
+                <p
+                  class="text-sm font-medium leading-normal text-gray-800 dark:text-gray-200"
+                >
+                  Timetable
+                </p>
+              </a>
+            </nav>
+          </div>
+          <!-- User Profile -->
+          <div class="flex flex-col gap-4">
+            <div class="h-px w-full bg-gray-200 dark:bg-gray-800"></div>
+            <div class="flex items-center gap-3">
+              <!-- <div
+                class="aspect-square size-10 rounded-full bg-cover bg-center bg-no-repeat"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDeMwzVMzf_7psnwNJm8EYBeZkGLf2Pa93F4tF9vU8xhMGxvweKp3I7TGSeJadHgQpzCzCJBKhRZZomyHgsHCTUJ2FNEFRXN9hbvWhRvr1LhTW3WyjrbXc_uY2fXcjQovovZKPmBiO6_AqeHcPm9OHH4k3aYPkK8LCbMUXCaTEuclfbuwjbeZiLnV-cBAQl10yZ4wqg3W9WUYDFgP5-cbOuESPk5ZY2HtuoAMEM-lFsS85MY-C8J14VcPJLQ0Jycy6ynh38fk1yLVk');
+                "
+              ></div>
+              <div class="flex flex-col">
+                <h1
+                  class="text-sm font-medium leading-normal text-gray-900 dark:text-white"
+                >
+                  Prince Nwokedi
+                </h1>
+                <p
+                  class="text-xs font-normal leading-normal text-gray-500 dark:text-gray-400"
+                >
+                  Computer Science
+                </p>
+              </div> -->
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex w-full flex-col">
+          <!-- Top Navbar with menu toggle -->
+          <header
+            class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 bg-background-light/80 dark:bg-background-dark/80 px-4 py-3 backdrop-blur-sm sm:px-8"
+          >
+            <div
+              class="flex items-center gap-4 text-gray-900 dark:text-white md:hidden"
+            >
+              <button
+                class="flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 size-10"
+              >
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+            </div>
+            <div class="flex flex-1 justify-end gap-4">
+              <button
+                class="flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 size-10"
+              >
+                <span class="material-symbols-outlined">logout</span>
+              </button>
+              <!-- darkmode -->
+              <button id="theme-toggle" type="button" class="theme-btn">
+                <span
+                  id="theme-toggle-light-icon"
+                  class="material-symbols-outlined hidden text-primary"
+                  >light_mode</span
+                >
+                <span
+                  id="theme-toggle-dark-icon"
+                  class="material-symbols-outlined hidden text-primary"
+                  >dark_mode</span
+                >
+              </button>
+              <!-- <div
+                class="aspect-square size-10 rounded-full bg-cover bg-center bg-no-repeat md:hidden"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHh8IWMXQNXwK6Kzke9lfC94WSh50smmBLoy-vOVjonCFmWIbTRu-QD538lwyCz9cWMtuJPw2dk3XHROVX3up9gh02NaMWGIS-W1hspR3Dot7xSyVyrzI5z3Way1Bve9ZR3bQ0vY88PwV_qbWBzic11htobMaGGuUWo-Z7VvuM6nhH-iHKpt_yzpndLLU05tdQRyMfk7LbzHu13r7aHAfch75xlHt4MLO-blo8X5-QW0Zz6GUwKllaVQrXDvrRQfo7Z9zaEujNuIg');
+                "
+              ></div> -->
+            </div>
+          </header>
+          <main class="flex-1 overflow-y-auto p-4 sm:p-8">
+            <div class="mx-auto max-w-7xl">
+              <!-- Section Heading and Add Event -->
+              <div
+                class="mb-6 flex flex-wrap items-center justify-between gap-4"
+              >
+                <h1
+                  class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-900 dark:text-white"
+                >
+                  Student Events
+                </h1>
+                <button
+                  id="addEventBtn"
+                  class="flex h-10 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-4 text-sm font-medium leading-normal text-white hover:bg-primary/90"
+                >
+                  <span class="material-symbols-outlined">add_circle</span>
+                  <span class="truncate">Add Event</span>
+                </button>
+              </div>
+              <!-- Search Bar -->
+              <div class="mb-8 flex items-center">
+                <div class="relative w-full">
+                  <div
+                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+                  >
+                    <span class="material-symbols-outlined text-gray-400"
+                      >search</span
+                    >
+                  </div>
+                  <input
+                    class="block w-full rounded-lg border border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-900 dark:text-white p-2.5 pl-10 text-gray-900 focus:border-primary focus:ring-primary dark:placeholder-gray-400"
+                    placeholder="Search events..."
+                    type="search"
+                  />
+                </div>
+              </div>
+
+              <!-- Event Cards Grid -->
+              <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Event Card 1 -->
+                <div
+                  class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+                >
+                  <h2
+                    class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
+                  >
+                    NACOS convention 2024
+                  </h2>
+                  <div
+                    class="my-2 flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-300"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >calendar_today</span
+                      >
+                      <span>November 15-17 2024</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >schedule</span
+                      >
+                      <span>9:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >location_on</span
+                      >
+                      <span>Grand Auditorium, Nova hotel</span>
+                    </div>
+                  </div>
+                  <p
+                    class="mb-4 text-base font-normal leading-normal text-gray-600 dark:text-gray-300"
+                  >
+                    Join us for three days of innovation, networking, and
+                    insightful talks from industry leaders in technology.
+                  </p>
+                </div>
+                <!-- Event Card 2 -->
+                <div
+                  class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+                >
+                  <h2
+                    class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
+                  >
+                    Costume day
+                  </h2>
+                  <div
+                    class="my-2 flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-300"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >calendar_today</span
+                      >
+                      <span>November 20, 2024</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >schedule</span
+                      >
+                      <span>10:00 AM - 3:00 PM</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >location_on</span
+                      >
+                      <span>Abuja Building</span>
+                    </div>
+                  </div>
+                  <p
+                    class="mb-4 text-base font-normal leading-normal text-gray-600 dark:text-gray-300"
+                  >
+                    Dress up in your favorite costume and participate in fun
+                    activities and a costume contest with exciting prizes.
+                  </p>
+                </div>
+                <!-- Event Card 3 -->
+                <div
+                  class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+                >
+                  <h2
+                    class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
+                  >
+                    Inter CLass Match
+                  </h2>
+                  <div
+                    class="my-2 flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-300"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >calendar_today</span
+                      >
+                      <span>November 24, 2024</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >schedule</span
+                      >
+                      <span>4:00 PM - 5:30 PM</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >location_on</span
+                      >
+                      <span>Franco B Pitch</span>
+                    </div>
+                  </div>
+                  <p
+                    class="mb-4 text-base font-normal leading-normal text-gray-600 dark:text-gray-300"
+                  >
+                    Come cheer for your class teams as they compete in a
+                    friendly soccer match to win the championship trophy.
+                  </p>
+                </div>
+                <!-- Event Card 4 -->
+                <div
+                  class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+                >
+                  <h2
+                    class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
+                  >
+                    Jersey day
+                  </h2>
+                  <div
+                    class="my-2 flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-300"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >calendar_today</span
+                      >
+                      <span>November 28, 2024</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >schedule</span
+                      >
+                      <span>11:00 AM - 4:00 PM</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >location_on</span
+                      >
+                      <span>Computer Science Building</span>
+                    </div>
+                  </div>
+                  <p
+                    class="mb-4 text-base font-normal leading-normal text-gray-600 dark:text-gray-300"
+                  >
+                    Show your team spirit by wearing your favorite sports jersey
+                    to campus. Prizes for the most creative outfits!
+                  </p>
+                </div>
+                <!-- ...More Event Cards... -->
+                <div
+                  class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+                >
+                  <h2
+                    class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
+                  >
+                    NACOS Bonfire
+                  </h2>
+                  <div
+                    class="my-2 flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-300"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >calendar_today</span
+                      >
+                      <span>December 9, 2024</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >schedule</span
+                      >
+                      <span>7:00 PM - 10:00 PM</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >location_on</span
+                      >
+                      <span>FPSLT quadrangle</span>
+                    </div>
+                  </div>
+                  <p
+                    class="mb-4 text-base font-normal leading-normal text-gray-600 dark:text-gray-300"
+                  >
+                    Celebrate the end of the semester with music, drinks, and
+                    good company around the bonfire.
+                  </p>
+                </div>
+                <div
+                  class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+                >
+                  <h2
+                    class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
+                  >
+                    NACOS Dinner Night
+                  </h2>
+                  <div
+                    class="my-2 flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-300"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >calendar_today</span
+                      >
+                      <span>December 10, 2024</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >schedule</span
+                      >
+                      <span>10PM-4AM</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base"
+                        >location_on</span
+                      >
+                      <span>UBA hall of fame</span>
+                    </div>
+                  </div>
+                  <p
+                    class="mb-4 text-base font-normal leading-normal text-gray-600 dark:text-gray-300"
+                  >
+                    A night of fine dining and socializing with fellow students
+                    and faculty members.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

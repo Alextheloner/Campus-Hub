@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Resource Hub - Login</title>
+
+    <!-- Load TailwindCSS with Plugins -->
+    <link rel="stylesheet" href="/css/output.css" />
+    <!-- Lexend Font for Display -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Custom Config -->
+
+    <!-- Additional Styling for Body Font -->
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark">
+    <div
+      class="relative flex min-h-screen w-full flex-col items-center justify-center font-display group/design-root"
+    >
+      <div class="w-full max-w-6xl p-4 md:p-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden rounded-xl shadow-lg bg-white dark:bg-slate-800"
+        >
+          <!-- Left: Branding with Background Image (visible on md+ only) -->
+          <div
+            class="relative hidden md:flex flex-col justify-end p-8 h-full bg-cover bg-center"
+            style="background-image: url('/Images/generated-image.png')"
+          >
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="relative z-10">
+              <h2 class="text-3xl font-bold text-white">Campus Resource Hub</h2>
+              <p class="mt-2 text-white/80">
+                Your one-stop portal for campus life.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Login Form -->
+          <div class="flex flex-col justify-center p-8 lg:p-12">
+            <div class="w-full max-w-md mx-auto">
+              <!-- Logo and App Name -->
+              <div class="flex items-center gap-3 mb-8">
+                <span class="material-symbols-outlined text-primary text-4xl"
+                  >school</span
+                >
+                <span
+                  class="text-xl font-semibold text-slate-800 dark:text-slate-200"
+                >
+                  CampusHub</span
+                >
+              </div>
+
+              <!-- Title -->
+              <div class="mb-6">
+                <p
+                  class="text-[#0d121b] dark:text-[#D1D5DB] tracking-light text-[32px] font-bold leading-tight"
+                >
+                  Sign in to your account
+                </p>
+              </div>
+
+              <!-- Error Message (hidden by default) -->
+              <div
+                class="mb-4 hidden rounded-lg border border-red-300 bg-red-50 p-3 dark:border-red-600 dark:bg-red-900/20"
+                id="error-message"
+              >
+                <p class="text-sm text-red-700 dark:text-red-400">
+                  Invalid email or password. Please try again.
+                </p>
+              </div>
+
+              <!-- Login Form (Semantic, Accessible) -->
+              <form
+                class="flex flex-col gap-4"
+                autocomplete="off"
+                id="loginForm"
+              >
+                <!-- Email Field -->
+                <label class="flex flex-col">
+                  <p
+                    class="text-[#0d121b] dark:text-[#D1D5DB] text-base font-medium leading-normal pb-2"
+                  >
+                    Email
+                  </p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-[#374151] bg-[#f8f9fc] dark:bg-[#1f2937] dark:text-slate-200 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#4c669a] p-[15px] text-base font-normal leading-normal transition-shadow"
+                    type="email"
+                    placeholder="Enter your email address"
+                    name="email"
+                    required
+                    autocomplete="username"
+                  />
+                </label>
+
+                <!-- Password Field with Show/Hide Icon -->
+                <label class="flex flex-col">
+                  <div class="flex items-center justify-between pb-2">
+                    <p
+                      class="text-[#0d121b] dark:text-[#D1D5DB] text-base font-medium leading-normal"
+                    >
+                      Password
+                    </p>
+                  </div>
+                  <div class="flex w-full flex-1 items-stretch rounded-lg">
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-[#0d121b] focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-[#374151] bg-[#f8f9fc] dark:bg-[#1f2937] dark:text-slate-200 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#4c669a] p-[15px] border-r-0 text-base font-normal leading-normal transition-shadow"
+                      type="password"
+                      placeholder="Enter your password"
+                      name="password"
+                      required
+                      autocomplete="current-password"
+                    />
+                    <div
+                      class="flex items-center justify-center rounded-r-lg border border-l-0 border-[#cfd7e7] dark:border-[#374151] bg-[#f8f9fc] dark:bg-[#1f2937] pr-[15px]"
+                    >
+                      <span
+                        class="material-symbols-outlined cursor-pointer text-[#4c669a] dark:text-slate-400"
+                        >visibility_off</span
+                      >
+                    </div>
+                  </div>
+                </label>
+
+                <!-- Submit Button -->
+                <button
+                  class="flex h-14 w-full items-center justify-center rounded-lg bg-primary px-6 text-base font-medium text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark transition-colors"
+                  type="submit"
+                >
+                  Login
+                </button>
+              </form>
+
+              <!-- Register CTA -->
+              <div class="mt-6 text-center">
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                  Don't have an account?
+                  <a
+                    class="font-semibold text-primary hover:underline"
+                    href="/html/signup.html"
+                    >Create one</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Right / Form Column -->
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/js/login.js"></script>
+  </body>
+</html>

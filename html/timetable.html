@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CampusHub Timetable Builder</title>
+    <!-- Tailwind CSS with forms and container-queries plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <!-- Tailwind custom config  -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#39E079",
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: "Lexend",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Material Symbols icon custom style -->
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="font-display bg-background-light dark:bg-background-dark">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root"
+    >
+      <div class="flex min-h-screen">
+        <!-- sidenav -->
+        <aside
+          class="sticky top-0 hidden h-screen w-64 shrink-0 flex-col justify-between border-r border-gray-200 bg-background-light p-4 dark:border-gray-800 dark:bg-background-dark md:flex"
+        >
+          <div class="flex flex-col gap-8">
+            <!-- Logo -->
+            <div class="flex items-center gap-3 px-3">
+              <div class="size-6 text-primary">
+                <span class="material-symbols-outlined text-3xl">school</span>
+              </div>
+              <h2
+                class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
+              >
+                CampusHub
+              </h2>
+            </div>
+            <!--  Navigation Links -->
+            <div class="flex flex-col gap-2">
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                href="/html/dashboard.html"
+              >
+                <span
+                  class="material-symbols-outlined text-gray-600 dark:text-gray-400"
+                  >dashboard</span
+                >
+                <p class="text-sm font-medium text-gray-800 dark:text-gray-200">
+                  Dashboard
+                </p>
+              </a>
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                href="/html/announcements.html"
+              >
+                <span
+                  class="material-symbols-outlined text-gray-600 dark:text-gray-400"
+                  >campaign</span
+                >
+                <p class="text-sm font-medium text-gray-800 dark:text-gray-200">
+                  Announcements
+                </p>
+              </a>
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                href="/html/resources.html"
+              >
+                <span
+                  class="material-symbols-outlined text-gray-600 dark:text-gray-400"
+                  >local_library</span
+                >
+                <p class="text-sm font-medium text-gray-800 dark:text-gray-200">
+                  Resources
+                </p>
+              </a>
+              <!-- Highlighted Active Section: Timetable -->
+              <a
+                class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary dark:bg-primary/30"
+                href="/html/events.html"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >event</span
+                >
+                <p class="text-sm font-medium leading-normal text-primary">
+                  Events
+                </p>
+              </a>
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                href="/html/timetable.html"
+              >
+                <span
+                  class="material-symbols-outlined text-gray-600 dark:text-gray-400"
+                  >edit_calendar</span
+                >
+                <p class="text-sm font-medium text-gray-800 dark:text-gray-200">
+                  Timetable
+                </p>
+              </a>
+            </div>
+          </div>
+          <!-- Sidebar User Info -->
+          <div class="flex flex-col gap-4">
+            <div class="h-px w-full bg-gray-200 dark:bg-gray-800"></div>
+            <div class="flex items-center gap-3">
+              <!-- <div
+                class="aspect-square size-10 rounded-full bg-cover bg-center bg-no-repeat"
+                data-alt="User avatar image"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDeMwzVMzf_7psnwNJm8EYBeZkGLf2Pa93F4tF9vU8xhMGxvweKp3I7TGSeJadHgQpzCzCJBKhRZZomyHgsHCTUJ2FNEFRXN9hbvWhRvr1LhTW3WyjrbXc_uY2fXcjQovovZKPmBiO6_AqeHcPm9OHH4k3aYPkK8LCbMUXCaTEuclfbuwjbeZiLnV-cBAQl10yZ4wqg3W9WUYDFgP5-cbOuESPk5ZY2HtuoAMEM-lFsS85MY-C8J14VcPJLQ0Jycy6ynh38fk1yLVk');
+                "
+              ></div>
+              <div class="flex flex-col">
+                <h1 class="text-sm font-medium text-gray-900 dark:text-white">
+                  Alex Johnson
+                </h1>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Student</p>
+              </div> -->
+            </div>
+          </div>
+        </aside>
+        <!-- main -->
+        <div class="flex w-full flex-col">
+          <header
+            class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-background-light/80 px-4 py-3 backdrop-blur-sm dark:border-gray-800 dark:bg-background-dark/80 sm:px-8"
+          >
+            <!-- Menu Button for mobile -->
+            <div
+              class="flex items-center gap-4 text-gray-900 dark:text-white md:hidden"
+            >
+              <button
+                class="flex size-10 items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+              >
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+            </div>
+            <!-- User Actions: Logout, Profile Avatar (mobile) -->
+            <div class="flex flex-1 justify-end gap-4">
+              <button
+                class="flex size-10 items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+              >
+                <span class="material-symbols-outlined">logout</span>
+              </button>
+              <!-- <div
+                class="aspect-square size-10 rounded-full bg-cover bg-center bg-no-repeat md:hidden"
+                data-alt="User avatar image"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHh8IWMXQNXwK6Kzke9lfC94WSh50smmBLoy-vOVjonCFmWIbTRu-QD538lwyCz9cWMtuJPw2dk3XHROVX3up9gh02NaMWGIS-W1hspR3Dot7xSyVyrzI5z3Way1Bve9ZR3bQ0vY88PwV_qbWBzic11htobMaGGuUWo-Z7VvuM6nhH-iHKpt_yzpndLLU05tdQRyMfk7LbzHu13r7aHAfch75xlHt4MLO-blo8X5-QW0Zz6GUwKllaVQrXDvrRQfo7Z9zaEujNuIg');
+                "
+              ></div> -->
+            </div>
+          </header>
+          <!-- Timetable Builder Main Section -->
+          <main class="flex-1 overflow-y-auto p-4 sm:p-8">
+            <div class="mx-auto max-w-7xl">
+              <!-- Timetable Page Title and Description -->
+              <div class="mb-8">
+                <h1
+                  class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-900 dark:text-white"
+                >
+                  My Timetable
+                </h1>
+                <p class="mt-1 text-gray-600 dark:text-gray-400">
+                  Plan your week and stay organized.
+                </p>
+              </div>
+              <!-- Timetable Entry Form -->
+              <div
+                class="mb-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900"
+              >
+                <form
+                  id="timetable-form"
+                  class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5 lg:items-end"
+                >
+                  <!-- Course Name -->
+                  <div>
+                    <label
+                      class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      for="course-name"
+                      >Course Name</label
+                    >
+                    <input
+                      class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+                      id="course-name"
+                      placeholder="e.g., Intro to Psychology"
+                      type="text"
+                    />
+                  </div>
+                  <!-- Day of the Week Dropdown -->
+                  <div>
+                    <label
+                      class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      for="day-of-week"
+                      >Day of the Week</label
+                    >
+                    <select
+                      class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                      id="day-of-week"
+                    >
+                      <option>Monday</option>
+                      <option>Tuesday</option>
+                      <option>Wednesday</option>
+                      <option>Thursday</option>
+                      <option>Friday</option>
+                    </select>
+                  </div>
+                  <!-- Start/End Time Inputs -->
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        for="start-time"
+                        >Start Time</label
+                      >
+                      <input
+                        class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                        id="start-time"
+                        type="time"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                        for="end-time"
+                        >End Time</label
+                      >
+                      <input
+                        class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                        id="end-time"
+                        type="time"
+                      />
+                    </div>
+                  </div>
+                  <!-- Location (Optional) -->
+                  <div>
+                    <label
+                      class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      for="location"
+                      >Location (Optional)</label
+                    >
+                    <input
+                      class="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
+                      id="location"
+                      placeholder="e.g., Science Hall 101"
+                      type="text"
+                    />
+                  </div>
+                  <!-- Form Buttons: Add Class / Clear All -->
+                  <div
+                    class="col-span-1 grid grid-cols-2 gap-2 md:col-span-2 lg:col-span-1"
+                  >
+                    <button
+                      class="flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary/90"
+                      type="submit"
+                    >
+                      Add Class
+                    </button>
+                    <button
+                      id="clear-btn"
+                      class="flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-gray-200 px-4 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+                      type="reset"
+                    >
+                      Clear All
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- Timetable Display Grid -->
+              <div
+                class="grid grid-cols-1 gap-0 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 md:grid-cols-5"
+              >
+                <!-- Monday Column -->
+                <div
+                  class="flex flex-col border-b md:border-b-0 md:border-r dark:border-gray-800"
+                >
+                  <div
+                    class="border-b bg-white p-4 text-center font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
+                  >
+                    Monday
+                  </div>
+                  <!-- Classes for Monday -->
+                  <div id="day-monday"
+                    class="min-h-[200px] flex-1 space-y-3 bg-background-light p-3 dark:bg-background-dark/50"
+                  >
+                    <div
+                      class="rounded-lg border border-green-200 bg-green-100 p-3 text-sm text-green-800 shadow-sm transition-transform hover:-translate-y-1 dark:border-green-900 dark:bg-green-950 dark:text-green-200"
+                    >
+                      <div class="flex items-start justify-between">
+                        <h3 class="font-bold"></h3>
+                        <div class="flex gap-1">
+                          <button
+                            class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
+                          >
+                            <span class="material-symbols-outlined text-base"
+                              >edit</span
+                            >
+                          </button>
+                          <button 
+                            class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
+                          >
+                            <span class="material-symbols-outlined text-base"
+                              >delete</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                      <p class="text-xs"></p>
+                      <p class="mt-1 text-xs"></p>
+                    </div>
+                    <!-- Add more Monday classes here -->
+                  </div>
+                </div>
+                <!-- Repeat for Tuesday - Friday -->
+                <div
+                  class="flex flex-col border-b md:border-b-0 md:border-r dark:border-gray-800"
+                >
+                  <div
+                    class="border-b bg-white p-4 text-center font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
+                  >
+                    Tuesday
+                  </div>
+                  <div
+                    class="min-h-[200px] flex-1 space-y-3 bg-background-light p-3 dark:bg-background-dark/50"
+                  >
+                    <div
+                      class="rounded-lg border border-green-200 bg-green-100 p-3 text-sm text-green-800 shadow-sm transition-transform hover:-translate-y-1 dark:border-green-900 dark:bg-green-950 dark:text-green-200"
+                    >
+                      <div class="flex items-start justify-between">
+                        <h3 class="font-bold">Intro to CS</h3>
+                        <div class="flex gap-1">
+                          <button
+                            class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
+                          >
+                            <span class="material-symbols-outlined text-base"
+                              >edit</span
+                            >
+                          </button>
+                          <button
+                            class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
+                          >
+                            <span class="material-symbols-outlined text-base"
+                              >delete</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                      <p class="text-xs">11:00 AM - 12:30 PM</p>
+                      <p class="mt-1 text-xs">CompSci, Lab 2</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Wednesday, Thursday, Friday columns follow same structure -->
+                <!-- ... -->
+              </div>
+              <!-- Timetable Success and Error Alerts -->
+              <div class="mt-8 space-y-4">
+                <!-- Success Alert (hidden by default, show with JS) -->
+                <div
+                  id="sucess=alert"
+                  class="flex items-center justify-between gap-4 rounded-lg bg-green-100 p-4 text-sm text-green-800 dark:bg-green-900/50 dark:text-green-300"
+                  role="alert"
+                  style="display: none"
+                >
+                  <p>
+                    <span class="font-medium">Success!</span> Class added
+                    successfully!
+                  </p>
+                  <button>
+                    <span class="material-symbols-outlined">check</span>
+                  </button>
+                </div>
+                <!-- Error Alert (hidden by default, show with JS) -->
+                <div
+                  id="error-alert"
+                  class="flex items-center justify-between gap-4 rounded-lg bg-red-100 p-4 text-sm text-red-800 dark:bg-red-900/50 dark:text-red-300"
+                  role="alert"
+                  style="display: none"
+                >
+                  <p>
+                    <span class="font-medium">Error!</span> Could not add class.
+                    Please check the details.
+                  </p>
+                  <button>
+                    <span class="material-symbols-outlined">close</span>
+                  </button>
+                </div>
+                <!-- Download PDF Button -->
+                <div class="flex justify-start">
+                  <button
+                    class="flex h-10 items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                  >
+                    <span class="material-symbols-outlined text-base"
+                      >download</span
+                    >
+                    <span>Download as PDF</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

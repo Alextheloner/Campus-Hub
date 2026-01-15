@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Hub - Sign Up</title>
+
+    <!-- Tailwind CSS and Plugins -->
+    <link rel="stylesheet" href="/css/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Custom Configuration -->
+
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden p-4 font-display"
+      style="font-family: Lexend, 'Noto Sans', sans-serif"
+    >
+      <!-- Top-Right Branding Icon -->
+      <div class="absolute top-0 right-0 p-4 md:p-6">
+        <div class="flex items-center gap-2 text-primary dark:text-zinc-500">
+          <span class="material-symbols-outlined text-xl">school</span>
+          <span class="text-sm font-medium">CampusHub</span>
+        </div>
+      </div>
+
+      <!-- Centered Sign Up Card -->
+      <div
+        class="flex w-full max-w-md flex-col items-center gap-8 rounded-xl bg-white dark:bg-zinc-900/50 p-6 md:p-8"
+      >
+        <!-- Heading -->
+        <div class="w-full text-center">
+          <h1
+            class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]"
+          >
+            Join the Campus Hub
+          </h1>
+        </div>
+
+        <!-- Sign Up Form -->
+        <form
+          id="signupForm"
+          autocomplete="off"
+          class="flex w-full flex-col gap-4"
+        >
+          <!-- Full Name -->
+          <div class="flex flex-col">
+            <label
+              for="fullName"
+              class="text-slate-900 dark:text-gray-200 text-base font-medium leading-normal pb-2"
+            >
+              Full Name
+            </label>
+            <input
+              id="fullName"
+              type="text"
+              placeholder="Enter your full name"
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-500 dark:placeholder:text-zinc-500 p-[15px] text-base font-normal leading-normal"
+            />
+          </div>
+
+          <!-- University Email -->
+          <div class="flex flex-col">
+            <label
+              for="email"
+              class="text-slate-900 dark:text-gray-200 text-base font-medium leading-normal pb-2"
+            >
+              University Email
+            </label>
+            <input
+              id="email"
+              type="email"
+              placeholder="student@university.edu"
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-500 dark:placeholder:text-zinc-500 p-[15px] text-base font-normal leading-normal"
+            />
+          </div>
+
+          <!-- Student ID -->
+          <div class="flex flex-col">
+            <label
+              for="studentId"
+              class="text-slate-900 dark:text-gray-200 text-base font-medium leading-normal pb-2"
+            >
+              Matric Number
+            </label>
+            <input
+              id="studentId"
+              type="text"
+              placeholder="Enter your matric number"
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-500 dark:placeholder:text-zinc-500 p-[15px] text-base font-normal leading-normal"
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="flex flex-col">
+            <label
+              for="password"
+              class="text-slate-900 dark:text-gray-200 text-base font-medium leading-normal pb-2"
+            >
+              Password
+            </label>
+            <div class="relative flex w-full flex-1 items-stretch">
+              <input
+                id="password"
+                type="password"
+                placeholder="Enter your password"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-500 dark:placeholder:text-zinc-500 p-[15px] text-base font-normal leading-normal pr-12"
+              />
+              <button
+                class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-500 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300"
+                type="button"
+              >
+                <span class="material-symbols-outlined" data-icon="Eye"
+                  >visibility</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="flex flex-col">
+            <label
+              for="confirmPassword"
+              class="text-slate-900 dark:text-gray-200 text-base font-medium leading-normal pb-2"
+            >
+              Confirm Password
+            </label>
+            <div class="relative flex w-full flex-1 items-stretch">
+              <input
+                id="confirmPassword"
+                type="password"
+                placeholder="Confirm your password"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-500 dark:placeholder:text-zinc-500 p-[15px] text-base font-normal leading-normal pr-12"
+              />
+              <button
+                class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-500 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300"
+                type="button"
+              >
+                <span class="material-symbols-outlined" data-icon="Eye"
+                  >visibility</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <!-- Sign Up Button -->
+          <div class="pt-4">
+            <button
+              id="signup-btn"
+              type="button"
+              class="flex h-14 w-full items-center justify-center rounded-lg bg-primary px-4 py-2 text-base font-bold text-white transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+
+        <!-- Already Have an Account -->
+        <p class="text-center text-sm text-slate-600 dark:text-zinc-400">
+          Already have an account?
+          <a class="font-medium text-primary hover:underline" href="/html/login.html"
+            >Log in</a
+          >
+        </p>
+      </div>
+      <p
+        id="signup-message"
+        class="text-sm mt-2 opacity-0 transition-all duration-300"
+      ></p>
+    </div>
+    <script type="module" src="/js/signup.js"></script>
+  </body>
+</html>
