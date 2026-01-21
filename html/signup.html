@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -27,7 +27,7 @@
   <body class="bg-background-light dark:bg-background-dark">
     <div
       class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden p-4 font-display"
-      style="font-family: Lexend, 'Noto Sans', sans-serif"
+      style="font-family: Lexend, &quot;Noto Sans&quot;, sans-serif"
     >
       <!-- Top-Right Branding Icon -->
       <div class="absolute top-0 right-0 p-4 md:p-6">
@@ -81,7 +81,7 @@
               University Email
             </label>
             <input
-              id="email"
+              id="signupEmail"
               type="email"
               placeholder="student@university.edu"
               class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-500 dark:placeholder:text-zinc-500 p-[15px] text-base font-normal leading-normal"
@@ -114,7 +114,7 @@
             </label>
             <div class="relative flex w-full flex-1 items-stretch">
               <input
-                id="password"
+                id="signupPassword"
                 type="password"
                 placeholder="Enter your password"
                 class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary h-14 placeholder:text-slate-500 dark:placeholder:text-zinc-500 p-[15px] text-base font-normal leading-normal pr-12"
@@ -159,8 +159,7 @@
           <!-- Sign Up Button -->
           <div class="pt-4">
             <button
-              id="signup-btn"
-              type="button"
+              type="submit"
               class="flex h-14 w-full items-center justify-center rounded-lg bg-primary px-4 py-2 text-base font-bold text-white transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark"
             >
               Sign Up
@@ -171,7 +170,9 @@
         <!-- Already Have an Account -->
         <p class="text-center text-sm text-slate-600 dark:text-zinc-400">
           Already have an account?
-          <a class="font-medium text-primary hover:underline" href="/html/login.html"
+          <a
+            class="font-medium text-primary hover:underline"
+            href="/html/login.html"
             >Log in</a
           >
         </p>
@@ -181,6 +182,6 @@
         class="text-sm mt-2 opacity-0 transition-all duration-300"
       ></p>
     </div>
-    <script type="module" src="/js/signup.js"></script>
+    <script type="module" src="/js/auth.js"></script>
   </body>
 </html>

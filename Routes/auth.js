@@ -2,6 +2,8 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
+const auth = require("../middleware/authMiddleware");
+
 
 
 const router = express.Router();
@@ -43,10 +45,11 @@ router.post("/login", async (req, res) => {
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials" });
 
     const token = jwt.sign(
-      { id: user._id },
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" }
-    );
+  { id: user._id, time: Date.now() },
+  process.env.JWT_SECRET,
+  { expiresIn: "1d" }
+);
+
 
     res.json({
       msg: "Login successful",
@@ -56,5 +59,14 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ msg: "Server error" });
   }
 });
+
+/* ================= DASHBOARD (PROTECTED) ================= */
+router.get("/dashboard", auth, (req, res) => {
+  res.json({
+    msg: "Welcome to CampusHub dashboard",
+    user: req.user
+  });
+});
+
 
 module.exports = router;
