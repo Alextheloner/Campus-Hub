@@ -60,3 +60,8 @@ if (loginBtn) {
   };
 }
 
+// Logout button
+document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("campusHubToken");
+    window.location.href = "/html/login.html";
+  });
