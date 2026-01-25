@@ -76,7 +76,7 @@ function clearTimetable() {
   });
 }
 
-// ✅ Render class card
+//  Render class card
 function renderClass(item) {
   const dayColumn = document.getElementById(
     `day-${item.day.toLowerCase()}`
@@ -104,7 +104,7 @@ function renderClass(item) {
   dayColumn.appendChild(div);
 }
 
-// ✅ Delete class
+//  Delete class
 async function deleteClass(id) {
   if (!confirm("Delete this class?")) return;
 
@@ -121,4 +121,41 @@ async function deleteClass(id) {
     console.error(err);
     alert("Failed to delete");
   }
+}
+
+//  Download timetable as PDF
+const downloadBtn = document.getElementById("download-pdf-btn");
+
+if (downloadBtn) {
+  downloadBtn.addEventListener("click", () => {
+    const timetable = document.getElementById("timetable-area");
+
+    // temporarily expand for PDF
+    timetable.classList.add("pdf-mode");
+
+    const opt = {
+      margin: 0.2,
+      filename: "CampusHub_Timetable.pdf",
+      image: { type: "jpeg", quality: 1 },
+      html2canvas: {
+        scale: 3,
+        useCORS: true,
+        scrollY: 0
+      },
+      jsPDF: {
+        unit: "mm",
+        format: "a4",
+        orientation: "landscape"
+      }
+    };
+
+    html2pdf()
+      .set(opt)
+      .from(timetable)
+      .save()
+      .then(() => {
+        // return to normal view
+        timetable.classList.remove("pdf-mode");
+      });
+  });
 }
