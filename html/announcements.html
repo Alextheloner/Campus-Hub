@@ -159,7 +159,7 @@
                 >
                   Announcements
                 </h1>
-                <button
+                <button id="addAnnouncementBtn"
                   class="flex h-10 min-w-[84px] max-w-[480px] items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-4 text-sm font-medium text-white hover:bg-primary/90"
                 >
                   <span class="material-symbols-outlined">add_circle</span>
@@ -170,160 +170,18 @@
              
 
               <!-- Announcements Cards List -->
-              <div class="flex flex-col gap-6">
-                <!-- Announcement Card 1 -->
-                <div
-                  class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
-                >
-                  <div class="mb-2 flex items-center justify-between">
-                    <h2
-                      class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
-                    >
-                      Library Hours Extended for Finals Week
-                    </h2>
-                    <p
-                      class="text-sm font-normal leading-normal text-gray-500 dark:text-gray-400"
-                    >
-                      Posted on October 25, 2024
-                    </p>
-                  </div>
-                  <p
-                    class="mb-4 text-base font-normal leading-normal text-gray-600 dark:text-gray-300"
-                  >
-                    To accommodate students studying for final exams, the main
-                    library will be open 24/7 from December 5th to December
-                    15th. Additional study spaces will be available in the west
-                    wing. Good luck with your exams!
-                  </p>
-                  <a class="font-medium text-primary hover:underline" href="#"
-                    >Read More</a
-                  >
-                </div>
-                <!-- Announcement Card 2 -->
-                <div
-                  class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
-                >
-                  <div class="mb-2 flex items-center justify-between">
-                    <h2
-                      class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
-                    >
-                      Annual Tech Symposium 2024: Call for Speakers
-                    </h2>
-                    <p
-                      class="text-sm font-normal leading-normal text-gray-500 dark:text-gray-400"
-                    >
-                      Posted on October 24, 2024
-                    </p>
-                  </div>
-                  <p
-                    class="mb-4 text-base font-normal leading-normal text-gray-600 dark:text-gray-300"
-                  >
-                    We are now accepting speaker applications for the Annual
-                    Tech Symposium on 'AI in the Modern World.' Students and
-                    faculty are encouraged to submit their proposals by November
-                    10th. This is a great opportunity to share your research.
-                  </p>
-                  <a class="font-medium text-primary hover:underline" href="#"
-                    >Read More</a
-                  >
-                </div>
-                <!-- Announcement Card 3 -->
-                <div
-                  class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
-                >
-                  <div class="mb-2 flex items-center justify-between">
-                    <h2
-                      class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
-                    >
-                      Campus-wide Power Outage Drill
-                    </h2>
-                    <p
-                      class="text-sm font-normal leading-normal text-gray-500 dark:text-gray-400"
-                    >
-                      Posted on October 22, 2024
-                    </p>
-                  </div>
-                  <p
-                    class="mb-4 text-base font-normal leading-normal text-gray-600 dark:text-gray-300"
-                  >
-                    There will be a scheduled power outage drill on Friday,
-                    October 28th, from 2:00 PM to 3:00 PM. This will affect all
-                    buildings on campus. Please save your work and plan
-                    accordingly. Emergency power will be active in designated
-                    areas.
-                  </p>
-                  <a class="font-medium text-primary hover:underline" href="#"
-                    >Read More</a
-                  >
-                </div>
-                <!-- Announcement Card 4 -->
-                <div
-                  class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
-                >
-                  <div class="mb-2 flex items-center justify-between">
-                    <h2
-                      class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white"
-                    >
-                      New Dining Hall Options Available
-                    </h2>
-                    <p
-                      class="text-sm font-normal leading-normal text-gray-500 dark:text-gray-400"
-                    >
-                      Posted on October 20, 2024
-                    </p>
-                  </div>
-                  <p
-                    class="mb-4 text-base font-normal leading-normal text-gray-600 dark:text-gray-300"
-                  >
-                    We're excited to announce new vegan and gluten-free options
-                    at the main dining hall, starting November 1st. Check out
-                    the menu on the CampusHub app for daily specials. Your
-                    feedback is welcome!
-                  </p>
-                  <a class="font-medium text-primary hover:underline" href="#"
-                    >Read More</a
-                  >
-                </div>
+              <div id="announcementsContainer" class="flex flex-col gap-6">
+                
               </div>
 
-              <!-- Pagination -->
-              <div class="mt-8 flex items-center justify-center gap-2">
-                <button
-                  class="flex h-10 w-10 items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
-                >
-                  <span class="material-symbols-outlined">chevron_left</span>
-                </button>
-                <button
-                  class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-sm font-medium text-white"
-                >
-                  1
-                </button>
-                <button
-                  class="flex h-10 w-10 items-center justify-center rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
-                >
-                  2
-                </button>
-                <button
-                  class="flex h-10 w-10 items-center justify-center rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
-                >
-                  3
-                </button>
-                <span class="text-gray-600 dark:text-gray-300">...</span>
-                <button
-                  class="flex h-10 w-10 items-center justify-center rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
-                >
-                  8
-                </button>
-                <button
-                  class="flex h-10 w-10 items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
-                >
-                  <span class="material-symbols-outlined">chevron_right</span>
-                </button>
-              </div>
+              
             </div>
           </main>
         </div>
       </div>
     </div>
+    <script src="/js/protect.js"></script>
+    <script src="/js/announcements.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>

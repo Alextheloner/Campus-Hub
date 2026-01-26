@@ -8,7 +8,7 @@ const locationInput = document.getElementById("location");
 const API_URL = "http://localhost:5000/api/timetable"; // change if different
 const token = localStorage.getItem("campusHubToken");
 
-// 🔐 redirect if not logged in
+//  redirect if not logged in
 if (!token) {
   alert("Please login again");
   window.location.href = "/html/login.html";
