@@ -1,4 +1,4 @@
-const API_URL = "/api/announcements";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/announcements`;
 const container = document.getElementById("announcementsContainer");
 const addBtn = document.getElementById("addAnnouncementBtn");
 

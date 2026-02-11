@@ -5,7 +5,7 @@ const startTimeInput = document.getElementById("start-time");
 const endTimeInput = document.getElementById("end-time");
 const locationInput = document.getElementById("location");
 
-const API_URL = "/api/timetable";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/timetable`;
 const token = localStorage.getItem("campusHubToken");
 
 //  redirect if not logged in
