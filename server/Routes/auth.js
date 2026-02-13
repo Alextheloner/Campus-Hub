@@ -66,11 +66,24 @@ router.post("/login", async (req, res) => {
 });
 
 /* ================= DASHBOARD (PROTECTED) ================= */
-router.get("/dashboard", auth, (req, res) => {
-  res.json({
-    msg: "Welcome to CampusHub dashboard",
-    user: req.user,
-  });
+router.get("/dashboard", auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select("-password");
+    if (!user) return res.status(404).json({ msg: "User not found" });
+    
+    res.json({
+      msg: "Welcome to CampusHub dashboard",
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        studentId: user.studentId,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "Server error" });
+  }
 });
 
 module.exports = router;
