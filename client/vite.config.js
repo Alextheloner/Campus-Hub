@@ -2,6 +2,13 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 export default defineConfig({
+  server: {
+    watch: {
+      // This tells Vite to watch all HTML files in the project
+      // and trigger a hot reload when they change
+      include: ['*/.html'], 
+    },
+  },
   build: {
     rollupOptions: {
       input: {
@@ -18,4 +25,5 @@ export default defineConfig({
       }
     }
   }
+  
 });
