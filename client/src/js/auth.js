@@ -1,5 +1,28 @@
 const API_URL = `${import.meta.env.VITE_API_URL}/api/auth`;
 
+/* ========== SHOW/HIDE PASSWORD TOGGLE ========== */
+function setupPasswordToggle(toggleId, inputId) {
+  const toggle = document.getElementById(toggleId);
+  const input = document.getElementById(inputId);
+  if (toggle && input) {
+    toggle.addEventListener("click", () => {
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+      const icon = toggle.querySelector(".material-symbols-outlined");
+      if (icon) {
+        icon.textContent = isPassword ? "visibility" : "visibility_off";
+      }
+    });
+  }
+}
+
+// Login page
+setupPasswordToggle("toggleLoginPassword", "loginPassword");
+
+// Signup page
+setupPasswordToggle("toggleSignupPassword", "signupPassword");
+setupPasswordToggle("toggleConfirmPassword", "confirmPassword");
+
 /* ========== SIGNUP ========== */
 const signupForm = document.getElementById("signupForm");
 

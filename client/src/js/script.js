@@ -61,7 +61,61 @@ if (loginBtn) {
 }
 
 // Logout button
-document.getElementById("logoutBtn").addEventListener("click", () => {
+const logoutBtn = document.getElementById("logoutBtn");
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("campusHubToken");
     window.location.href = "/login.html";
   });
+}
+
+// Mobile menu toggle (public pages: index, About, contact)
+const menuToggle = document.getElementById("menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = !mobileMenu.classList.contains("hidden");
+    if (isOpen) {
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("flex");
+    } else {
+      mobileMenu.classList.remove("hidden");
+      mobileMenu.classList.add("flex");
+    }
+    // Swap hamburger icon to close icon
+    const icon = menuToggle.querySelector(".material-symbols-outlined");
+    if (icon) {
+      icon.textContent = isOpen ? "menu" : "close";
+    }
+  });
+}
+
+// Mobile sidebar toggle (dashboard pages)
+const sidebarToggle = document.getElementById("sidebar-toggle");
+const mobileSidebarOverlay = document.getElementById("mobile-sidebar-overlay");
+const mobileSidebarBackdrop = document.getElementById("mobile-sidebar-backdrop");
+const mobileSidebarClose = document.getElementById("mobile-sidebar-close");
+
+function openMobileSidebar() {
+  if (mobileSidebarOverlay) {
+    mobileSidebarOverlay.classList.remove("hidden");
+    sidebarToggle.classList.toggle("hidden")
+  }
+}
+
+function closeMobileSidebar() {
+  if (mobileSidebarOverlay) {
+    mobileSidebarOverlay.classList.add("hidden");
+    sidebarToggle.classList.toggle("hidden");
+  }
+}
+
+if (sidebarToggle) {
+  sidebarToggle.addEventListener("click", openMobileSidebar);
+}
+// if (mobileSidebarBackdrop) {
+//   mobileSidebarBackdrop.addEventListener("click", closeMobileSidebar);
+// }
+if (mobileSidebarClose) {
+  mobileSidebarClose.addEventListener("click", closeMobileSidebar);
+}

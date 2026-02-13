@@ -54,6 +54,46 @@
     <div
       class="relative flex h-auto min-h-screen w-full flex-col group/design-root"
     >
+      <!-- Mobile Sidebar Overlay -->
+      <div id="mobile-sidebar-overlay" class="fixed inset-0 z-50 hidden md:hidden">
+        <div id="mobile-sidebar-backdrop" class="absolute inset-0 bg-black/50"></div>
+        <aside class="relative h-full w-64 flex flex-col justify-between bg-background-light dark:bg-background-dark p-4 shadow-xl">
+          <div class="flex flex-col gap-8">
+            <div class="flex items-center justify-between px-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                <h2 class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white">CampusHub</h2>
+              </div>
+              <button id="mobile-sidebar-close" class="flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 size-10">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <nav class="flex flex-col gap-2">
+              <a class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" href="/dashboard.html">
+                <span class="material-symbols-outlined text-gray-600 dark:text-gray-400">dashboard</span>
+                <p class="text-sm font-medium text-gray-800 dark:text-gray-200">Dashboard</p>
+              </a>
+              <a class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" href="/announcements.html">
+                <span class="material-symbols-outlined text-gray-600 dark:text-gray-400">campaign</span>
+                <p class="text-sm font-medium text-gray-800 dark:text-gray-200">Announcements</p>
+              </a>
+              <a class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" href="/resources.html">
+                <span class="material-symbols-outlined text-gray-600 dark:text-gray-400">local_library</span>
+                <p class="text-sm font-medium text-gray-800 dark:text-gray-200">Resources</p>
+              </a>
+              <a class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" href="/events.html">
+                <span class="material-symbols-outlined text-gray-600 dark:text-gray-400">event</span>
+                <p class="text-sm font-medium text-gray-800 dark:text-gray-200">Events</p>
+              </a>
+              <a class="flex items-center gap-3 rounded-lg bg-primary/20 px-3 py-2 text-primary dark:bg-primary/30" href="/timetable.html">
+                <span class="material-symbols-outlined text-primary">edit_calendar</span>
+                <p class="text-sm font-medium text-primary">Timetable</p>
+              </a>
+            </nav>
+          </div>
+        </aside>
+      </div>
+
       <div class="flex min-h-screen">
         <!-- sidenav -->
         <aside
@@ -165,6 +205,7 @@
               class="flex items-center gap-4 text-gray-900 dark:text-white md:hidden"
             >
               <button
+                id="sidebar-toggle"
                 class="flex size-10 items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
               >
                 <span class="material-symbols-outlined">menu</span>
